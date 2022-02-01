@@ -1,4 +1,5 @@
 import axios from "axios";
+import { errorToast } from "../components/Toast/Toast";
 
 const addPoints = async (amount) => {
 	const points = await axios(
@@ -12,7 +13,10 @@ const addPoints = async (amount) => {
 			},
 			data: JSON.stringify({ amount }),
 		}
-	);
+	).catch((error) => {
+		console.log(error);
+		errorToast();
+	});
 	return points;
 };
 

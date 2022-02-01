@@ -43,6 +43,24 @@ export const errorToast = () => {
 	));
 };
 
+export const errorServerToast = () => {
+	return toast.error((t) => (
+		<StyledToast>
+			<div className="toast__text">
+				<TextDefaultL1>Server error, please reload the page</TextDefaultL1>
+			</div>
+			<div onClick={() => toast.dismiss(t.id)} className="toast__close">
+				<Image
+					src="/assets/icons/cross-default.svg"
+					alt="close icon"
+					width={24}
+					height={24}
+				/>
+			</div>
+		</StyledToast>
+	));
+};
+
 export const ToasterComponent = () => (
 	<Toaster
 		position="bottom-left"

@@ -7,6 +7,7 @@ import HeroImg from "../HeroImg";
 
 function CardsSection() {
 	const isBreakpoint = useMediaQuery(1412);
+
 	return (
 		<StyledSection>
 			{isBreakpoint && <HeroImg />}

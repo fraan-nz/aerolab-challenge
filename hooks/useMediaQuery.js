@@ -13,13 +13,13 @@ export const useMediaQuery = (width) => {
 
 	useEffect(() => {
 		const media = window.matchMedia(`(max-width: ${width}px)`);
-		media.addListener(updateTarget);
+		media.addEventListener("change", updateTarget);
 
 		if (media.matches) {
 			setTargetReached(true);
 		}
 
-		return () => media.removeListener(updateTarget);
+		return () => media.removeEventListener("change", updateTarget);
 	}, [updateTarget, width]);
 
 	return targetReached;

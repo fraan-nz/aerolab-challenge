@@ -14,6 +14,12 @@ export default function Home({ products }) {
 export async function getStaticProps() {
 	const { data } = await getProducts();
 
+	if (!data) {
+		return {
+			notFound: true,
+		};
+	}
+
 	return {
 		props: {
 			products: data,

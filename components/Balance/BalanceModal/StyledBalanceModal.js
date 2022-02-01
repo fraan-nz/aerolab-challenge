@@ -11,9 +11,16 @@ export const StyledBalanceModal = styled(motion.div)`
 	background-color: ${({ theme }) => theme.colors.neutrals.c0};
 	box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
 	position: absolute;
-	right: 0px;
+	right: 2.5%;
 	top: 95px;
 	display: none;
+
+	@media (max-width: 1024px) {
+		right: 4.5%;
+	}
+	@media (max-width: 375px) {
+		right: 5.5%;
+	}
 
 	.balance__title {
 		width: 100%;
